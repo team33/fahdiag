@@ -26,14 +26,14 @@ Kris Rusocki <kszysiu@gmail.com>
 Detecting FAH directory.
 Using /home/user/fah
 
-Hostname: demon
+Hostname: machine
 IP: 192.168.1.25
 
 Client running:
 user      2217  0.0  0.0 257668  1284 pts/1    Sl+  Mar30   0:14 ./fah6
 
 tmpfs:
-tmpfs  /home/dave/fah  tmpfs  rw,uid=1000,gid=1000  0  0
+tmpfs  /home/user/fah  tmpfs  rw,uid=1000,gid=1000  0  0
 tmpfs          tmpfs   16G  466M   16G   3% /home/user/fah
 drwxrwxrwt 4 user user 480 Apr  1 07:31 /home/user/fah
 
@@ -61,9 +61,9 @@ Kraken version:
 thekraken: The Kraken 0.7-pre15 (compiled Sat Mar 30 07:13:09 CDT 2013 by root@machine)
 
 Kraken wrap:
--rwxr-x--- 1 dave dave 6272504 Mar 26 00:11 /home/user/fah/FahCore_a3.exe
--rwxr-xr-x 1 dave dave   64168 Dec  6 20:33 /home/user/fah/FahCore_a5.exe
--rwxr-x--- 1 dave dave 6272504 Dec  6 20:33 /home/user/fah/thekraken-FahCore_a5.  exe
+-rwxr-x--- 1 user user 6272504 Mar 26 00:11 /home/user/fah/FahCore_a3.exe
+-rwxr-xr-x 1 user user   64168 Dec  6 20:33 /home/user/fah/FahCore_a5.exe
+-rwxr-x--- 1 user user 6272504 Dec  6 20:33 /home/user/fah/thekraken-FahCore_a5.  exe
 
 Kraken running:
  7214  7215 99.7   0 thekraken-FahCo
@@ -129,13 +129,13 @@ host=127.0.0.1
 port=8880
 
 Langouste script version:
-40830662e2f1a31090070700c9366ffc  /home/dave/fah/langouste-helper.sh
+40830662e2f1a31090070700c9366ffc  /home/user/fah/langouste-helper.sh
 
 Langouste script permission:
--rwxr-xr-x 1 dave dave 1605 Mar 23 10:25 /home/dave/fah/langouste-helper.sh
+-rwxr-xr-x 1 user user 1605 Mar 23 10:25 /home/user/fah/langouste-helper.sh
 
 Langouste -- rc.local:
-sudo -u dave langouste3 -l 8880 -D
+sudo -u user langouste3 -l 8880 -D
 
 NUMA -- memory:
 /sys/devices/system/node/node0/meminfo:Node 0 MemTotal:        4192248 kB

@@ -1,0 +1,162 @@
+NAME
+   fahdiag - Folding@Home diagnostic script
+
+SYNOPSIS
+   ./fahdiag
+
+DESCRIPTION
+   fahdiag is a diagnostic script to help troubleshoot issues with Folding@Home
+   installs using The [H]orde recommendations in the DC Guides section of
+   hardforum.com - http://hardforum.com/forumdisplay.php?f=133
+
+OPTIONS
+   none
+
+BUGS
+   none known
+
+EXAMPLE OF OUTPUT
+=========================================================================
+fahdiag.sh 0.2
+Brought to you by The [H]orde
+Copyright (c) 2013
+Dave Corfman <davecorfman@gmail.com>
+Kris Rusocki <kszysiu@gmail.com>
+
+Detecting FAH directory.
+Using /home/user/fah
+
+Hostname: demon
+IP: 192.168.1.25
+
+Client running:
+user      2217  0.0  0.0 257668  1284 pts/1    Sl+  Mar30   0:14 ./fah6
+
+tmpfs:
+tmpfs  /home/dave/fah  tmpfs  rw,uid=1000,gid=1000  0  0
+tmpfs          tmpfs   16G  466M   16G   3% /home/user/fah
+drwxrwxrwt 4 user user 480 Apr  1 07:31 /home/user/fah
+
+Crontab entry:
+00 * * * * fahbackup > /dev/null 2>&1
+
+Restore -- rc.local:
+sudo -u user fahrestore #[H]ardOCP
+
+Backup data:
+current
+total 476636
+-rw-rw-r-- 1 user user 488069120 Apr  1 09:00 2013-04-01-0900.tar
+previous
+total 445164
+-rw-rw-r-- 1 user user 455843840 Apr  1 08:00 2013-04-01-0800.tar
+
+Backup-on-shutdown:
+-rwxr-xr-x 1 root root 35 Mar 30 07:11 /etc/init.d/fahbackup-rc
+lrwxrwxrwx 1 root root 24 Mar 30 07:11 /etc/rc0.d/K10fahbackup-rc -> /etc/init.d  /fahbackup-rc
+lrwxrwxrwx 1 root root 24 Mar 30 07:11 /etc/rc1.d/K10fahbackup-rc -> /etc/init.d  /fahbackup-rc
+lrwxrwxrwx 1 root root 24 Mar 30 07:11 /etc/rc6.d/K10fahbackup-rc -> /etc/init.d  /fahbackup-rc
+
+Kraken version:
+thekraken: The Kraken 0.7-pre15 (compiled Sat Mar 30 07:13:09 CDT 2013 by root@machine)
+
+Kraken wrap:
+-rwxr-x--- 1 dave dave 6272504 Mar 26 00:11 /home/user/fah/FahCore_a3.exe
+-rwxr-xr-x 1 dave dave   64168 Dec  6 20:33 /home/user/fah/FahCore_a5.exe
+-rwxr-x--- 1 dave dave 6272504 Dec  6 20:33 /home/user/fah/thekraken-FahCore_a5.  exe
+
+Kraken running:
+ 7214  7215 99.7   0 thekraken-FahCo
+ 7214  7218 99.8   1 thekraken-FahCo
+ 7214  7219 99.9   2 thekraken-FahCo
+ 7214  7220 99.8   3 thekraken-FahCo
+ 7214  7221 99.9   4 thekraken-FahCo
+ 7214  7222 99.8   5 thekraken-FahCo
+ 7214  7223 99.9   6 thekraken-FahCo
+ 7214  7224 99.8   7 thekraken-FahCo
+ 7214  7225 99.9   8 thekraken-FahCo
+ 7214  7226 99.8   9 thekraken-FahCo
+ 7214  7227 99.9  10 thekraken-FahCo
+ 7214  7228 99.8  11 thekraken-FahCo
+ 7214  7229 99.9  12 thekraken-FahCo
+ 7214  7230 99.8  13 thekraken-FahCo
+ 7214  7231 99.9  14 thekraken-FahCo
+ 7214  7232 99.8  15 thekraken-FahCo
+ 7214  7233 99.9  16 thekraken-FahCo
+ 7214  7234 99.8  17 thekraken-FahCo
+ 7214  7235 99.9  18 thekraken-FahCo
+ 7214  7236 99.8  19 thekraken-FahCo
+ 7214  7237 99.9  20 thekraken-FahCo
+ 7214  7238 99.8  21 thekraken-FahCo
+ 7214  7239 99.9  22 thekraken-FahCo
+ 7214  7240 99.7  23 thekraken-FahCo
+ 7214  7241 99.9  24 thekraken-FahCo
+ 7214  7242 99.8  25 thekraken-FahCo
+ 7214  7243 99.9  26 thekraken-FahCo
+ 7214  7244 99.8  27 thekraken-FahCo
+ 7214  7245 99.9  28 thekraken-FahCo
+ 7214  7246 99.8  29 thekraken-FahCo
+ 7214  7247 99.9  30 thekraken-FahCo
+ 7214  7248 99.5  31 thekraken-FahCo
+ 7214  7249 99.9  32 thekraken-FahCo
+ 7214  7250 99.8  33 thekraken-FahCo
+ 7214  7251 99.9  34 thekraken-FahCo
+ 7214  7252 99.8  35 thekraken-FahCo
+ 7214  7253 99.9  36 thekraken-FahCo
+ 7214  7254 99.8  37 thekraken-FahCo
+ 7214  7255 99.9  38 thekraken-FahCo
+ 7214  7256 99.8  39 thekraken-FahCo
+ 7214  7257 99.9  40 thekraken-FahCo
+ 7214  7258 99.8  41 thekraken-FahCo
+ 7214  7259 99.9  42 thekraken-FahCo
+ 7214  7260 99.8  43 thekraken-FahCo
+ 7214  7261 99.9  44 thekraken-FahCo
+ 7214  7262 99.8  45 thekraken-FahCo
+ 7214  7263 99.9  46 thekraken-FahCo
+ 7214  7264 99.8  47 thekraken-FahCo
+
+Langouste version:
+0.15.8.3
+
+Langouste running:
+user      1805  0.0  0.0  14816  1256 ?        Ss   Mar30   0:01 langouste3 -l 8  880 -D
+
+Langouste -- client.cfg:
+username=user
+team=33
+active=yes
+host=127.0.0.1
+port=8880
+
+Langouste script version:
+40830662e2f1a31090070700c9366ffc  /home/dave/fah/langouste-helper.sh
+
+Langouste script permission:
+-rwxr-xr-x 1 dave dave 1605 Mar 23 10:25 /home/dave/fah/langouste-helper.sh
+
+Langouste -- rc.local:
+sudo -u dave langouste3 -l 8880 -D
+
+NUMA -- memory:
+/sys/devices/system/node/node0/meminfo:Node 0 MemTotal:        4192248 kB
+/sys/devices/system/node/node0/meminfo:Node 0 MemFree:         3094224 kB
+/sys/devices/system/node/node1/meminfo:Node 1 MemTotal:        4194304 kB
+/sys/devices/system/node/node1/meminfo:Node 1 MemFree:         3431124 kB
+/sys/devices/system/node/node2/meminfo:Node 2 MemTotal:        4194304 kB
+/sys/devices/system/node/node2/meminfo:Node 2 MemFree:         3767744 kB
+/sys/devices/system/node/node3/meminfo:Node 3 MemTotal:        4194304 kB
+/sys/devices/system/node/node3/meminfo:Node 3 MemFree:         2739044 kB
+/sys/devices/system/node/node4/meminfo:Node 4 MemTotal:        4194304 kB
+/sys/devices/system/node/node4/meminfo:Node 4 MemFree:         3788332 kB
+/sys/devices/system/node/node5/meminfo:Node 5 MemTotal:        4194304 kB
+/sys/devices/system/node/node5/meminfo:Node 5 MemFree:         3745652 kB
+/sys/devices/system/node/node6/meminfo:Node 6 MemTotal:        4194304 kB
+/sys/devices/system/node/node6/meminfo:Node 6 MemFree:         3794164 kB
+/sys/devices/system/node/node7/meminfo:Node 7 MemTotal:        4194304 kB
+/sys/devices/system/node/node7/meminfo:Node 7 MemFree:         3573224 kB
+
+Scaling governor: scaling disabled
+
+vmstat -- this will take 10 seconds
+48  0      0 27935440  64976 1845284    0    0     0     6 12679  185 91  9  0    0
+48  0      0 27937252  64976 1845300    0    0     0     0 12655  176 91  9  0    0

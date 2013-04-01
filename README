@@ -2,6 +2,8 @@ NAME
    fahdiag - Folding@Home diagnostic script
 
 SYNOPSIS
+   wget https://raw.github.com/team33/fahdiag/master/fahdiag
+   chmod +x fahdiag
    ./fahdiag
 
 DESCRIPTION

@@ -36,6 +36,7 @@ echo
 
 echo Hostname: $(hostname)
 echo IP: $(ip route get 8.8.8.8 | sed -ne '{s/^.*src.//;p;q}')
+echo Kernel: $(uname -r)
 echo
 
 echo Client running:

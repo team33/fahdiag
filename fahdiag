@@ -70,6 +70,7 @@ echo
 
 echo Kraken version:
 thekraken -V 2>&1 | head -1
+ls -l $(which thekraken)
 echo
 
 echo Kraken wrap:

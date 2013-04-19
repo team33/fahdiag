@@ -117,5 +117,9 @@ echo top 5 CPU consumers:
 ps -eopid=,pcpu=,psr=,comm=  | sort -nrk2,2 | head -5
 echo
 
+echo top 5 memory consumers:
+ps -eopid=,rss=,comm=  | sort -nrk2,2 | head -5
+echo
+
 echo vmstat \(this will take 10 seconds\):
 vmstat 5 3 | tail -2

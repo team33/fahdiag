@@ -114,7 +114,7 @@ echo Scaling governor: $GOVERNOR
 echo
 
 echo top 5 CPU consumers:
-ps -eopid=,tid=,pcpu=,psr=,comm=  | sort -nrk3,3 | head -5
+ps -eopid=,pcpu=,psr=,comm=  | sort -nrk2,2 | head -5
 echo
 
 echo vmstat \(this will take 10 seconds\):

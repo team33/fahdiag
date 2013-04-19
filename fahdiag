@@ -43,6 +43,10 @@ echo Client running:
 ps auxw | egrep '[^]]fah6([^\.]|$)'
 echo
 
+echo client.cfg:
+egrep '^username=|^team=|^extra_parms=' $FAHDIR/client.cfg
+echo
+
 echo tmpfs:
 grep -v ^\# /etc/fstab | grep $FAHDIR
 df -hT $FAHDIR | tail -n +2

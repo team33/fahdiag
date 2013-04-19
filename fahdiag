@@ -59,13 +59,13 @@ echo
 
 echo Backup data:
 echo current
-ls -l ~/fahbackup-data/current/
+ls -l ~/fahbackup-data/current/ 2> /dev/null
 echo previous
-ls -l ~/fahbackup-data/previous/
+ls -l ~/fahbackup-data/previous/ 2> /dev/null
 echo
 
 echo Backup-on-shutdown:
-ls -l /etc/rc{0,1,6}.d/K10fahbackup-rc /etc/init.d/fahbackup-rc
+ls -l /etc/rc{0,1,6}.d/K10fahbackup-rc /etc/init.d/fahbackup-rc 2> /dev/null
 echo
 
 echo Kraken version:
@@ -74,7 +74,7 @@ ls -l $(which thekraken)
 echo
 
 echo Kraken wrap:
-ls -l $FAHDIR/*FahCore*
+ls -l $FAHDIR/*FahCore* 2> /dev/null
 echo
 
 echo Kraken running:
@@ -82,7 +82,7 @@ ps -Leopid=,tid=,pcpu=,psr=,comm= | awk '/[F]ahCo/ { if ($3 > 10) print }'
 echo
 
 echo Langouste version:
-langouste3 -V | sed -r 's/(Langouste3 )([0-9\.]+)[^0-9\.].*$/\2/'
+langouste3 -V 2> /dev/null | sed -r 's/(Langouste3 )([0-9\.]+)[^0-9\.].*$/\2/'
 echo
 
 echo Langouste running:
@@ -94,10 +94,10 @@ egrep '^username=|^team=|^host=|^port=|^active=' $FAHDIR/client.cfg
 echo
 
 echo Langouste script version:
-md5sum $FAHDIR/langouste-helper.sh
+md5sum $FAHDIR/langouste-helper.sh 2> /dev/null
 echo
 echo Langouste script permission:
-ls -l $FAHDIR/langouste-helper.sh
+ls -l $FAHDIR/langouste-helper.sh 2> /dev/null
 echo
 
 echo Langouste -- rc.local:

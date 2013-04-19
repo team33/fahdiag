@@ -90,7 +90,7 @@ ps auxw | grep [^]]langouste3
 echo
 
 echo Langouste -- client.cfg:
-egrep '^username=|^team=|^host=|^port=|^active=' $FAHDIR/client.cfg
+egrep '^host=|^port=|^active=' $FAHDIR/client.cfg
 echo
 
 echo Langouste script version:

@@ -4,14 +4,65 @@
 # Folding@Home diagnostics
 # 
 
+usage()
+{
+	echo Usage:
+	echo -e \\t$0 [\<directory\>]
+	echo -e \\t$0 -V
+	echo -e \\t$0 -h
+}
+
+OPT_FAHDIR=
+OPT_VERSION=
+OPT_USAGE=
+
+while [ -n "$1" ]; do
+	case $1 in
+		(-V)
+			OPT_VERSION=1
+			shift
+			;;
+		(-h)
+			OPT_USAGE=1
+			shift
+			;;
+		(-*)
+			echo ERROR: invalid option -- $1
+			exit 1
+			;;
+		(*)
+			break
+			;;
+	esac
+done
+
+while [ -n "$1" ]; do
+	if [ -n "$OPT_FAHDIR" ]; then
+		echo ERROR: excess argument -- $1
+		exit 1
+	fi
+	OPT_FAHDIR=$1
+	shift
+done
+
+if [ -n "$OPT_VERSION$OPT_USAGE" -a \( "$OPT_VERSION$OPT_USAGE" != "1" -o -n "$OPT_FAHDIR" \) ]; then
+	echo ERROR: conflicting arguments
+	exit 1
+fi
+
+[ -n "$OPT_USAGE" ] && usage && exit 0
+
 echo fahdiag 0.2
+
+[ -n "$OPT_VERSION" ] && exit 0
+
 echo Brought to you by The \[H\]orde
 echo Copyright \(c\) 2013 
 echo Dave Corfman \<davecorfman@gmail.com\>
 echo Kris Rusocki \<kszysiu@gmail.com\>
 echo
 
-FAHDIR=
+FAHDIR=$OPT_FAHDIR
 
 test_dir()
 {

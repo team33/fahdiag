@@ -181,6 +181,7 @@ echo
 
 echo vmstat \(this will take 10 seconds\):
 vmstat 5 3 | tail -2
+echo
 
 echo [H] environment:
 fahinstall -V

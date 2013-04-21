@@ -80,9 +80,7 @@ if [ -z "$FAHDIR" ]; then
 	echo Detecting FAH directory.
 	test_dir ~/fah || test_dir /var/lib/origami/foldingathome/CPU1
 	if [ -z "$FAHDIR" ]; then
-		echo Couldn\'t detect FAH directory.
-		echo Run:
-		echo -e \\t$0 \<fah-directory\>
+		echo ERROR: couldn\'t detect FAH directory
 		exit 1
 	fi
 fi

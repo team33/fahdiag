@@ -1,4 +1,9 @@
 #!/bin/bash
+#
+# fahdiag 0.2
+# Folding@Home diagnostics
+# 
+
 echo fahdiag 0.2
 echo Brought to you by The \[H\]orde
 echo Copyright \(c\) 2013 

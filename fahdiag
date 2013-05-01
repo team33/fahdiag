@@ -111,10 +111,6 @@ echo Crontab entry:
 crontab -l | grep fahbackup
 echo
 
-echo Restore -- rc.local:
-grep -v ^\# /etc/rc.local | grep fahrestore
-echo
-
 echo Backup data:
 echo current
 ls -l ~/fahbackup-data/current/ 2> /dev/null

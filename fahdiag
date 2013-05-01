@@ -118,8 +118,8 @@ echo previous
 ls -l ~/fahbackup-data/previous/ 2> /dev/null
 echo
 
-echo Backup-on-shutdown:
-ls -l /etc/rc{0,1,6}.d/K10fahbackup-rc /etc/init.d/fahbackup-rc 2> /dev/null
+echo fahbackup -- SysV initscripts:
+ls -l /etc/rc*.d/*fahbackup-rc /etc/init.d/fahbackup-rc 2> /dev/null
 echo
 
 echo Kraken version:

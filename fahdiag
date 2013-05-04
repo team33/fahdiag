@@ -179,6 +179,10 @@ echo vmstat \(this will take 10 seconds\):
 vmstat 5 3 | tail -2
 echo
 
+echo rc.local:
+grep -Ev '^[[:space:]]*#|^[[:space:]]*$' /etc/rc.local
+echo
+
 echo [H] environment:
 fahinstall -V
 fahbackup -V

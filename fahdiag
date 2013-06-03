@@ -113,9 +113,9 @@ echo
 
 echo Backup data:
 echo current
-ls -l ~/fahbackup-data/current/ 2> /dev/null
+ls -lh ~/fahbackup-data/current/ 2> /dev/null
 echo previous
-ls -l ~/fahbackup-data/previous/ 2> /dev/null
+ls -lh ~/fahbackup-data/previous/ 2> /dev/null
 echo
 
 echo fahbackup -- SysV initscripts:

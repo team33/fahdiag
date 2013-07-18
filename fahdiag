@@ -183,6 +183,15 @@ echo rc.local:
 grep -Ev '^[[:space:]]*#|^[[:space:]]*$' /etc/rc.local
 echo
 
+FILELIST=$(ls -rt /var/log/{messages,syslog}* 2> /dev/null)
+echo Last 10 hardware health syslog messages:
+if [ -z "$FILELIST" ]; then
+	echo WARNING: no files found!
+else
+	zgrep -Ei 'mcelog|machine.check|hardware.error|detected.stall|lockup|oops:' $FILELIST 2>&1 | tail -10
+fi
+echo
+
 echo [H] environment:
 fahinstall -V
 fahbackup -V

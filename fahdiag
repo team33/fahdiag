@@ -154,8 +154,8 @@ echo Langouste script permission:
 ls -l $FAHDIR/langouste-helper.sh 2> /dev/null
 echo
 
-echo Langouste -- rc.local:
-grep -v ^\# /etc/rc.local | grep langouste
+echo Langouste -- SysV initscripts:
+ls -l /etc/rc*.d/*langouste3 /etc/init.d/langouste3 2> /dev/null
 echo
 
 echo NUMA -- memory:

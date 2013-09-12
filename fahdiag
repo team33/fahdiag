@@ -200,4 +200,5 @@ echo [H] environment:
 fahinstall -V
 fahbackup -V
 fahrestore -V
+hfminstall -V
 fahdiag -V

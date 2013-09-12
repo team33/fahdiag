@@ -158,6 +158,10 @@ echo Langouste -- SysV initscripts:
 ls -l /etc/rc*.d/*langouste3 /etc/init.d/langouste3 2> /dev/null
 echo
 
+echo Langouste -- configuration file:
+cat /etc/langouste3/langouste3.conf | grep -Ev '^[[:space:]]*$|^[[:space:]]*#'
+echo
+
 echo NUMA -- memory:
 grep Mem[FT] /sys/devices/system/node/node[0-9]*/meminfo
 echo

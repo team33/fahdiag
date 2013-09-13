@@ -196,6 +196,14 @@ else
 fi
 echo
 
+echo Last 10 FahCore crash messages:
+if [ -z "$FILELIST" ]; then
+	echo WARNING: no files found!
+else
+	zgrep -EiA2 'fahco.*unexpected.fatal.signal' $FILELIST 2>&1 | grep -Ev ':--|][[:space:]]*$' | tail -10
+fi
+echo
+
 echo [H] environment:
 fahinstall -V
 fahbackup -V

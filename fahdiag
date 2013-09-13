@@ -76,10 +76,6 @@ test_dir()
 
 [ -z "$1" ] || FAHDIR=$1
 
-echo Date:
-date
-echo
-
 if [ -z "$FAHDIR" ]; then
 	echo Detecting FAH directory.
 	test_dir ~/fah || test_dir /var/lib/origami/foldingathome/CPU1
@@ -92,6 +88,7 @@ fi
 echo Using $FAHDIR
 echo
 
+echo Date: $(date)
 echo Hostname: $(hostname)
 echo IP: $(ip route get 8.8.8.8 | sed -ne '{s/^.*src.//;p;q}')
 echo Kernel: $(uname -rv)

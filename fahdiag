@@ -76,6 +76,10 @@ test_dir()
 
 [ -z "$1" ] || FAHDIR=$1
 
+echo Date:
+date
+echo
+
 if [ -z "$FAHDIR" ]; then
 	echo Detecting FAH directory.
 	test_dir ~/fah || test_dir /var/lib/origami/foldingathome/CPU1

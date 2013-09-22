@@ -95,7 +95,9 @@ echo Kernel: $(uname -rv)
 echo
 
 echo Client running:
-ps auxw | egrep '[^]]fah6([^\.]|$)'
+for i in $(pidof fah6) ; do
+	echo "$(ps -p $i -wwouser=,pid=,pcpu=,pmem=,vsz=,rss=,tty=,stat=,start_time=,bsdtime=,cmd=)    [cwd:$(ls -l /proc/$i/cwd | sed 's/.*->.//')]"
+done
 echo
 
 echo client.cfg:

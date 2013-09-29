@@ -195,7 +195,7 @@ echo Last 20 hardware health syslog messages:
 if [ -z "$FILELIST" ]; then
 	echo WARNING: no files found!
 else
-	zgrep -Ei 'mcelog|machine.check|hardware.error|detected.stall|lockup|oops:' $FILELIST 2>&1 | tail -20
+	zgrep -Ei 'mcelog|machine.check|hardware.error|detected.stall|lockup|oops:|edac' $FILELIST 2>&1 | tail -20
 fi
 echo
 

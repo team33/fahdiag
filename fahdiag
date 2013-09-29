@@ -191,11 +191,11 @@ grep -Ev '^[[:space:]]*#|^[[:space:]]*$' /etc/rc.local
 echo
 
 FILELIST=$(ls -rt /var/log/{messages,syslog}* 2> /dev/null)
-echo Last 10 hardware health syslog messages:
+echo Last 20 hardware health syslog messages:
 if [ -z "$FILELIST" ]; then
 	echo WARNING: no files found!
 else
-	zgrep -Ei 'mcelog|machine.check|hardware.error|detected.stall|lockup|oops:' $FILELIST 2>&1 | tail -10
+	zgrep -Ei 'mcelog|machine.check|hardware.error|detected.stall|lockup|oops:' $FILELIST 2>&1 | tail -20
 fi
 echo
 

@@ -92,6 +92,7 @@ echo Date: $(date)
 echo Hostname: $(hostname)
 echo IP: $(ip route get 8.8.8.8 | sed -ne '{s/^.*src.//;p;q}')
 echo Kernel: $(uname -rv)
+echo Uptime: $(uptime | sed -r 's/^.*up (.*),[^,]*users.*$/\1/')
 echo
 
 echo Client running:

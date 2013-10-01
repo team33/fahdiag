@@ -184,6 +184,7 @@ ps -eopid=,rss=,comm=  | sort -nrk2,2 | head -5
 echo
 
 echo vmstat \(this will take 10 seconds\):
+vmstat | head -2
 vmstat 5 3 | tail -2
 echo
 

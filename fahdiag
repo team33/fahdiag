@@ -99,7 +99,7 @@ echo
 
 echo Client running:
 for i in $(pidof fah6) ; do
-	echo "$(ps -p $i -wwouser=,pid=,pcpu=,pmem=,vsz=,rss=,tty=,stat=,start_time=,bsdtime=,cmd=)    [cwd:$(ls -l /proc/$i/cwd | sed 's/.*->.//')]"
+	echo "$(ps -p $i -wwouser=,pid=,pcpu=,pmem=,vsz=,rss=,tty=,stat=,start_time=,bsdtime=,cmd=)    [cwd:$(ls -l /proc/$i/cwd | sed 's/.*->.//;t;s/.*/unknown/')]"
 done
 echo
 

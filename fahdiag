@@ -12,6 +12,8 @@ usage()
 	echo -e \\t$0 -h
 }
 
+export PATH=/sbin:/usr/sbin:$PATH
+
 OPT_FAHDIR=
 OPT_VERSION=
 OPT_USAGE=

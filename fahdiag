@@ -129,8 +129,11 @@ ls -l /etc/rc*.d/*fahbackup-rc /etc/init.d/fahbackup-rc 2> /dev/null
 echo
 
 echo Kraken version:
-thekraken -V 2>&1 | head -1
-ls -l $(which thekraken)
+KRAKEN=$(which thekraken 2> /dev/null)
+if [ -n "$KRAKEN" ]; then
+	thekraken -V 2>&1 | head -1
+	ls -l $KRAKEN
+fi
 echo
 
 echo Kraken wrap:

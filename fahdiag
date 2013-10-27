@@ -91,7 +91,7 @@ echo Using $FAHDIR
 echo
 
 echo Date: $(date)
-echo Hostname: $(hostname)
+echo Hostname: $(hostname -s)
 echo IP: $(ip route get 8.8.8.8 | sed -ne '{s/^.*src.//;p;q}' | awk -F "." '{ if ($1 == 10 || $1 == 172 && $2 >= 16 && $2 <= 31 || $1 == 192 && $2 == 168) { print } else { print "xx.xx.xx." $4 } }')
 echo Kernel: $(uname -rv)
 echo Boot time: $(date -d @$(sed -n '/btime / {s/btime //;p}' < /proc/stat))

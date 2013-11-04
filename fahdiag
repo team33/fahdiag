@@ -105,7 +105,7 @@ done
 echo
 
 echo client.cfg:
-sed -rn '/^username=|^team=|^extra_parms=/{p}' $FAHDIR/client.cfg 2> /dev/null
+sed -rn '/^username=|^team=|^extra_parms=/{p};/^passkey=/{s/=.+/=***passkey present***/;p}' $FAHDIR/client.cfg 2> /dev/null
 echo
 
 echo tmpfs:

@@ -1,6 +1,6 @@
 #!/bin/bash
 #
-# fahdiag 0.15
+# fahdiag 0.16
 # Folding@Home diagnostics
 # 
 
@@ -54,7 +54,7 @@ fi
 
 [ -n "$OPT_USAGE" ] && usage && exit 0
 
-echo fahdiag 0.15
+echo fahdiag 0.16
 
 [ -n "$OPT_VERSION" ] && exit 0
 

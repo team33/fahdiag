@@ -7,7 +7,7 @@
 usage()
 {
 	echo Usage:
-	echo -e \\t$0 [\<directory\>]
+	echo -e \\t$0 [-a] [\<directory\>]
 	echo -e \\t$0 -V
 	echo -e \\t$0 -h
 }
@@ -15,11 +15,16 @@ usage()
 export PATH=/sbin:/usr/sbin:$PATH
 
 OPT_FAHDIR=
+OPT_ALL_LOGS=
 OPT_VERSION=
 OPT_USAGE=
 
 while [ -n "$1" ]; do
 	case $1 in
+		(-a)
+			OPT_ALL_LOGS=1
+			shift
+			;;
 		(-V)
 			OPT_VERSION=1
 			shift
@@ -198,12 +203,19 @@ echo rc.local:
 grep -Ev '^[[:space:]]*#|^[[:space:]]*$' /etc/rc.local
 echo
 
+TAIL="| tail -20"
+TAIL_STRING="Last 20"
+if [ -n "$OPT_ALL_LOGS" ]; then
+	TAIL=""
+	TAIL_STRING="All"
+fi
+
 FILELIST=$(ls -rt /var/log/{messages,syslog}* 2> /dev/null)
-echo Last 20 hardware health syslog messages:
+echo $TAIL_STRING hardware health syslog messages:
 if [ -z "$FILELIST" ]; then
 	echo WARNING: no files found!
 else
-	zgrep -Ei 'mcelog|machine.check|hardware.error|detected.stall|lockup|oops:|edac|t=.*jiffies' $FILELIST 2>&1 | grep -Eiv 'giving.out|seeking.for|driver.loaded|edac.mc..ver|modules.linked.in' | tail -20
+	zgrep -Ei 'mcelog|machine.check|hardware.error|detected.stall|lockup|oops:|edac|t=.*jiffies' $FILELIST 2>&1 | grep -Eiv 'giving.out|seeking.for|driver.loaded|edac.mc..ver|modules.linked.in' $TAIL
 fi
 echo
 
@@ -211,7 +223,7 @@ echo Last 20 FahCore crash messages:
 if [ -z "$FILELIST" ]; then
 	echo WARNING: no files found!
 else
-	zgrep -EiA2 'fahco.*unexpected.fatal.signal' $FILELIST 2>&1 | grep -Ev ':--|][[:space:]]*$' | tail -20
+	zgrep -EiA2 'fahco.*unexpected.fatal.signal' $FILELIST 2>&1 | grep -Ev ':--|][[:space:]]*$' $TAIL
 fi
 echo
 

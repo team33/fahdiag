@@ -203,10 +203,10 @@ echo rc.local:
 grep -Ev '^[[:space:]]*#|^[[:space:]]*$' /etc/rc.local
 echo
 
-TAIL="| tail -20"
+TAIL="tail -20"
 TAIL_STRING="Last 20"
 if [ -n "$OPT_ALL_LOGS" ]; then
-	TAIL=""
+	TAIL="cat"
 	TAIL_STRING="All"
 fi
 
@@ -215,7 +215,7 @@ echo $TAIL_STRING hardware health syslog messages:
 if [ -z "$FILELIST" ]; then
 	echo WARNING: no files found!
 else
-	zgrep -Ei 'mcelog|machine.check|hardware.error|detected.stall|lockup|oops:|edac|t=.*jiffies' $FILELIST 2>&1 | grep -Eiv 'giving.out|seeking.for|driver.loaded|edac.mc..ver|modules.linked.in' $TAIL
+	zgrep -Ei 'mcelog|machine.check|hardware.error|detected.stall|lockup|oops:|edac|t=.*jiffies' $FILELIST 2>&1 | grep -Eiv 'giving.out|seeking.for|driver.loaded|edac.mc..ver|modules.linked.in' | $TAIL
 fi
 echo
 
@@ -223,7 +223,7 @@ echo Last 20 FahCore crash messages:
 if [ -z "$FILELIST" ]; then
 	echo WARNING: no files found!
 else
-	zgrep -EiA2 'fahco.*unexpected.fatal.signal' $FILELIST 2>&1 | grep -Ev ':--|][[:space:]]*$' $TAIL
+	zgrep -EiA2 'fahco.*unexpected.fatal.signal' $FILELIST 2>&1 | grep -Ev ':--|][[:space:]]*$' | $TAIL
 fi
 echo
 

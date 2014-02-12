@@ -216,7 +216,7 @@ if [ -z "$FILELIST" ]; then
 	echo WARNING: no files found!
 else
 	zgrep -Ei 'mcelog|machine.check|hardware.error|detected.stall|lockup|oops:|edac|t=.*jiffies' $FILELIST 2>&1 | grep -Eiv 'giving.out|seeking.for|driver.loaded|edac.mc..ver|modules.linked.in' | \
-		grep -Ev 'EDAC amd64: MC: [02346]: +[0-9]+MB [1357]: +[0-9]+MB|EDAC MC: DCT[01] chip selects|EDAC amd64: using x[0-9]+ syndromes|EDAC amd64: MCT channel count: [0-9]+|EDAC amd64: CS[0-9]+:|EDAC amd64: DRAM ECC enabled|EDAC amd64: F[0-9]+h detected' | \
+		grep -Ev 'EDAC amd64: MC: [02346]: +[0-9]+MB [1357]: +[0-9]+MB|EDAC MC: DCT[01] chip selects|EDAC amd64: using x[0-9]+ syndromes|EDAC amd64: MCT channel count: [0-9]+|EDAC amd64: CS[0-9]+:|EDAC amd64: DRAM ECC enabled|EDAC amd64: F[0-9]+h detected|AMD64 EDAC driver v[0-9]' | \
 		$TAIL
 fi
 echo
